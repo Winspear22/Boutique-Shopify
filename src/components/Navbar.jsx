@@ -32,6 +32,14 @@ export default function Navbar({ t, lang, toggleLang, setView }) {
         return t.faq && t.faq.linkName ? t.faq.linkName : 'FAQ'; 
     };
 
+    const handleLogoClick = () => {
+        setView('main');
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
     const handleNavClick = (view) => (e) => {
         e.preventDefault();
         if (view === 'reviews' || view === 'faq') {
@@ -51,7 +59,7 @@ export default function Navbar({ t, lang, toggleLang, setView }) {
                 
                 {/* Logo */}
                 <div 
-                    onClick={() => setView('main')}
+                    onClick={handleLogoClick} 
                     className="w-auto text-2xl font-black tracking-tighter text-white uppercase italic select-none cursor-pointer hover:text-brand-accent transition-colors"
                 >
                     SHADOW<span className="text-brand-accent">STRIKE</span>

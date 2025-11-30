@@ -75,9 +75,9 @@ export default function App() {
             
             <div className="relative z-10">
                 <Navbar t={t.nav} lang={lang} toggleLang={toggleLang} setView={setView} />
-                <Hero t={t.hero} />
+                <Hero t={t.hero} setView={setView} />
                 <Features t={t.features} />
-                <Product3D t={t} /> 
+                {/*<Product3D t={t} /> */}
                 <TrainingVideos t={t} />
                 <Footer t={t.footer} />
             </div>
