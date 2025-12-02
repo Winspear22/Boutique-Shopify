@@ -1,14 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function Hero({ t, setView })
-{    // ✅ 1. ÉTATS
+export default function Hero({ t, setView }) {
+    // ✅ 1. ÉTATS
     const [isMuted, setIsMuted] = useState(true);
     const [volume, setVolume] = useState(0); 
     const [isHoveringSound, setIsHoveringSound] = useState(false);
     
     // ✅ MODIF : Initialisation intelligente de isPlaying via localStorage
-    // Si pas de sauvegarde, on part sur true (lecture par défaut)
     const [isPlaying, setIsPlaying] = useState(() => {
         const savedState = localStorage.getItem('hero_isPlaying');
         return savedState !== 'false'; 
@@ -24,7 +23,7 @@ export default function Hero({ t, setView })
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
-    // ✅ NOUVEAU : Sauvegarde automatique de l'état lecture/pause
+    // ✅ Sauvegarde automatique de l'état lecture/pause
     useEffect(() => {
         localStorage.setItem('hero_isPlaying', isPlaying);
     }, [isPlaying]);
@@ -37,14 +36,13 @@ export default function Hero({ t, setView })
         video.muted = true;
         video.defaultMuted = true;
         
-        // On ne lance la lecture QUE si l'état est "lecture"
         if (isPlaying) {
             video.play().catch(err => {
                 console.log("Autoplay bloqué :", err);
-                setIsPlaying(false); // Si le navigateur bloque, on met à jour l'état
+                setIsPlaying(false); 
             });
         } else {
-            video.pause(); // Sinon on s'assure qu'elle est en pause
+            video.pause(); 
         }
     };
 
@@ -107,7 +105,6 @@ export default function Hero({ t, setView })
                 ref={videoRef}
                 key={isMobile ? "mobile" : "desktop"}
                 src={videoSrc}
-                // ✅ MODIF : autoPlay dépend de l'état (si false, pas d'autoplay)
                 autoPlay={isPlaying} 
                 loop 
                 muted 
@@ -123,7 +120,7 @@ export default function Hero({ t, setView })
             {/* ✅ CONTRÔLE SON EN HAUT À DROITE */}
             <div className="absolute top-24 right-8 z-30 flex flex-col items-end gap-4">
                 
-                {/* 1. GROUPE VOLUME (Slider + Mute) - Code Intouché */}
+                {/* 1. GROUPE VOLUME (Slider + Mute) */}
                 <div 
                     className="flex items-center gap-4 flex-row-reverse"
                     onMouseEnter={() => setIsHoveringSound(true)}
@@ -142,7 +139,7 @@ export default function Hero({ t, setView })
                                 </motion.svg>
                             ) : (
                                 <motion.svg key="unmute" initial={{ scale: 0.8 }} animate={{ scale: 1 }} exit={{ scale: 0.8 }} xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
                                 </motion.svg>
                             )}
                         </AnimatePresence>
@@ -196,15 +193,22 @@ export default function Hero({ t, setView })
                 <div className="h-8 flex items-end mb-6">
                     <h2 className="text-brand-accent font-bold tracking-[0.3em] text-xs md:text-sm uppercase animate-fade-in-up">{t.subtitle}</h2>
                 </div>
-                <h1 className="text-6xl md:text-9xl font-black text-white mb-8 tracking-tighter uppercase italic leading-[0.9] whitespace-nowrap">
-                    {t.titleStart} <br/>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-600">{t.titleEnd}</span>
+                
+                {/* ✅ MODIF : TITRE SUR 3 LIGNES */}
+               <h1 className="text-5xl md:text-8xl lg:text-9xl font-black text-white mb-8 tracking-tighter uppercase italic leading-[0.9] whitespace-nowrap">
+                    {t.line1} <br/>
+                    {t.line2} <br/>
+                    {t.line3} <br/>
+                    {/* Seule la dernière ligne "Longtemps" a le dégradé */}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-600">
+                        {t.line4}
+                    </span>
                 </h1>
+
                 <div className="min-h-[80px] md:min-h-[60px] flex items-start justify-center mb-12">
                     <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">{t.description}</p>
                 </div>
                 
-                {/* ✅ LE BOUTON QUI MARCHE ENFIN */}
                 <div className="flex flex-col md:flex-row gap-6 w-full md:w-auto">
                     <button 
                         onClick={() => setView('shop')} 

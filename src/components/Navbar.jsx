@@ -11,12 +11,15 @@ export default function Navbar({ t, lang, toggleLang, setView }) {
 
     // ✅ Calcul du nombre total d'articles (pas juste le nombre de lignes)
     const cartQuantity = cart?.lineItems?.reduce((total, item) => total + item.quantity, 0) || 0;
-
+    
     const languages = [
         { code: 'fr', label: 'FR' },
         { code: 'en', label: 'EN' },
         { code: 'de', label: 'DE' },
-        { code: 'it', label: 'IT' }
+        { code: 'it', label: 'IT' },
+        // ✅ AJOUT ICI
+        { code: 'nl', label: 'NL' },
+        { code: 'sv', label: 'SV' }
     ];
 
     const handleLangChange = (code) => {
@@ -24,13 +27,8 @@ export default function Navbar({ t, lang, toggleLang, setView }) {
         setIsLangOpen(false);
     };
 
-    const getReviewLinkName = () => {
-        return t.reviews && t.reviews.subtitle ? t.reviews.subtitle : 'AVIS';
-    };
-
-    const getFaqLinkName = () => {
-        return t.faq && t.faq.linkName ? t.faq.linkName : 'FAQ'; 
-    };
+    // 🗑️ SUPPRESSION DES FONCTIONS getReviewLinkName et getFaqLinkName ICI
+    // Elles ne sont plus nécessaires.
 
     const handleLogoClick = () => {
         setView('main');
@@ -70,9 +68,12 @@ export default function Navbar({ t, lang, toggleLang, setView }) {
                     <div className="flex items-center justify-center">
                         <a href="#features" onClick={handleNavClick('features')} className="px-4 text-center text-xs font-bold tracking-[0.2em] text-gray-400 uppercase hover:text-white transition-colors duration-300">{t.tech}</a>
                         <a href="#training" onClick={handleNavClick('training')} className="px-4 text-center text-xs font-bold tracking-[0.2em] text-gray-400 uppercase hover:text-white transition-colors duration-300">{t.training}</a>
-                        <a href="#" onClick={handleNavClick('reviews')} className="px-4 text-center text-xs font-bold tracking-[0.2em] text-gray-400 uppercase hover:text-white transition-colors duration-300">{getReviewLinkName()}</a>
-                        <a href="#" onClick={handleNavClick('faq')} className="px-4 text-center text-xs font-bold tracking-[0.2em] text-gray-400 uppercase hover:text-white transition-colors duration-300">{getFaqLinkName()}</a>
-                        <a href="https://shopify.com/93464265037/account" target="_blank" rel="noopener noreferrer" className="px-4 text-center text-xs font-bold tracking-[0.2em] text-brand-accent uppercase hover:text-white transition-colors duration-300 border border-brand-accent/30 rounded-full py-1 ml-2">Mon Espace</a>
+                        
+                        {/* ✅ MODIFICATION ICI : Utilisation directe de t.reviews et t.faq */}
+                        <a href="#" onClick={handleNavClick('reviews')} className="px-4 text-center text-xs font-bold tracking-[0.2em] text-gray-400 uppercase hover:text-white transition-colors duration-300">{t.reviews}</a>
+                        <a href="#" onClick={handleNavClick('faq')} className="px-4 text-center text-xs font-bold tracking-[0.2em] text-gray-400 uppercase hover:text-white transition-colors duration-300">{t.faq}</a>
+                        
+                        <a href="https://shopify.com/93464265037/account" target="_blank" rel="noopener noreferrer" className="px-4 text-center text-xs font-bold tracking-[0.2em] text-brand-accent uppercase hover:text-white transition-colors duration-300 border border-brand-accent/30 rounded-full py-1 ml-2">{t.account}</a>
                     </div>
 
                     <div className="h-4 w-[1px] bg-gray-700 mx-6"></div>

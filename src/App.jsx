@@ -34,6 +34,10 @@ export default function App() {
                 if (prev === 'fr') return 'en';
                 if (prev === 'en') return 'de';
                 if (prev === 'de') return 'it';
+                // ✅ AJOUT DES NOUVELLES LANGUES
+                if (prev === 'it') return 'nl';
+                if (prev === 'nl') return 'sv';
+                if (prev === 'sv') return 'fr'; // Retour au début
                 return 'fr';
             });
         }

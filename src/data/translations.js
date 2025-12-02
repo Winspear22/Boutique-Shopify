@@ -3,15 +3,22 @@ export const translations = {
     nav: {
       tech: "Technologie",
       training: "Entraînement",
-      buy: "ACHETER"
+      buy: "ACHETER",
+      reviews: "Avis",
+      faq: "FAQ",
+      account: "Mon Espace"
     },
     hero: {
       subtitle: "Système de Résistance Progressive",
-      titleStart: "Frappez",
-      titleEnd: "Plus Vite.",
+      // ✅ 4 LIGNES : Action, Vitesse, Force, Durée
+      line1: "Frappez",
+      line2: "Plus Vite.",
+      line3: "Plus Fort.",
+      line4: "Longtemps.", // Pas de "Plus" ici comme demandé
       description: "Transformez l'air en adversaire. L'équipement Shadow Strike ajoute une résistance fluide à chaque mouvement pour une explosivité dévastatrice.",
       cta: "Commander",
     },
+    // ... Le reste (features, product3d, etc.) ne change pas, tu peux garder l'ancien code ...
     features: {
       title: "L'avantage Injuste",
       subtitle: "Pourquoi les pros l'utilisent",
@@ -85,15 +92,21 @@ export const translations = {
     nav: {
       tech: "Technology",
       training: "Training",
-      buy: "BUY NOW"
+      buy: "BUY NOW",
+      reviews: "Reviews",
+      faq: "FAQ",
+      account: "My Account"
     },
     hero: {
       subtitle: "Progressive Resistance System",
-      titleStart: "Strike",
-      titleEnd: "Faster.",
+      line1: "Strike",
+      line2: "Faster.",
+      line3: "Stronger.",
+      line4: "Longer.",
       description: "Turn thin air into your opponent. Shadow Strike gear adds fluid resistance to every movement for devastating explosiveness.",
       cta: "Order Now",
     },
+    // ... garder le reste de la traduction anglaise ...
     features: {
       title: "The Unfair Advantage",
       subtitle: "Why pros use it",
@@ -167,15 +180,21 @@ export const translations = {
     nav: {
       tech: "Technologie",
       training: "Training",
-      buy: "KAUFEN"
+      buy: "KAUFEN",
+      reviews: "Bewertungen",
+      faq: "FAQ",
+      account: "Mein Konto"
     },
     hero: {
       subtitle: "Progressives Widerstandssystem",
-      titleStart: "Schlage",
-      titleEnd: "Schneller.",
+      line1: "Schlage",
+      line2: "Schneller.",
+      line3: "Stärker.",
+      line4: "Länger.",
       description: "Verwandle die Luft in deinen Gegner. Shadow Strike fügt jeder Bewegung flüssigen Widerstand hinzu für verheerende Explosivität.",
       cta: "Bestellen",
     },
+    // ... garder le reste de la traduction allemande ...
     features: {
       title: "Der Unfaire Vorteil",
       subtitle: "Warum Profis es nutzen",
@@ -249,15 +268,21 @@ export const translations = {
     nav: {
       tech: "Tecnologia",
       training: "Allenamento",
-      buy: "ACQUISTA"
+      buy: "ACQUISTA",
+      reviews: "Recensioni",
+      faq: "FAQ",
+      account: "Il Mio Account"
     },
     hero: {
       subtitle: "Sistema a Resistenza Progressiva",
-      titleStart: "Colpisci",
-      titleEnd: "Più Forte.",
+      line1: "Colpisci",
+      line2: "Più Veloce.",
+      line3: "Più Forte.",
+      line4: "A Lungo.",
       description: "Trasforma l'aria nel tuo avversario. Shadow Strike aggiunge una resistenza fluida a ogni movimento per un'esplosività devastante.",
       cta: "Ordina Ora",
     },
+    // ... garder le reste de la traduction italienne ...
     features: {
       title: "Il Vantaggio Sleale",
       subtitle: "Perché i pro lo usano",
@@ -325,6 +350,180 @@ export const translations = {
       rights: "Tutti i diritti riservati.",
       brandDesc: "L'attrezzatura di riferimento per gli atleti da combattimento che esigono l'eccellenza.",
       links: ["Note Legali", "Termini", "Contatti"]
+    }
+  },
+  nl: {
+    nav: {
+      tech: "Technologie",
+      training: "Training",
+      buy: "KOPEN",
+      reviews: "Reviews",
+      faq: "FAQ",
+      account: "Mijn Account"
+    },
+    hero: {
+      subtitle: "Progressief Weerstandssysteem",
+      line1: "Stoot",      // Frappez
+      line2: "Sneller.",   // Plus vite
+      line3: "Harder.",    // Plus fort
+      line4: "Langer.",    // Longtemps
+      description: "Verander lucht in je tegenstander. Shadow Strike voegt vloeiende weerstand toe aan elke beweging voor verwoestende explosiviteit.",
+      cta: "Bestellen",
+    },
+    features: {
+      title: "Het Oneerlijke Voordeel",
+      subtitle: "Waarom de pro's het gebruiken",
+      cards: [
+        {
+          title: "Vloeiende Weerstand",
+          desc: "In tegenstelling tot gewichten verhoogt het elastiek de spanning aan het einde van de beweging, precies waar de impact maximaal is."
+        },
+        {
+          title: "Spiergeheugen",
+          desc: "Corrigeer je houding natuurlijk. Als je dekking zakt, herinnert de spanning je er direct aan."
+        },
+        {
+          title: "Licht & Duurzaam",
+          desc: "Polymeer van luchtvaartkwaliteit. Onverwoestbaar, weegt minder dan 200g en past in je zak."
+        }
+      ]
+    },
+    product3d: {
+      subtitle: "Ergonomisch Ontwerp",
+      titleStart: "Absolute",
+      titleEnd: "Grip",
+      desc: "Getextureerde grip ontworpen om zweet af te voeren. Totale controle, zelfs bij maximale intensiteit.",
+      btn: "3D Bekijken",
+      instructions: {
+        rotate: "Linkerklik: Draaien",
+        zoom: "Scrollen: Zoomen"
+      }
+    },
+    training: {
+      subtitle: "In Actie",
+      titleStart: "Beheers de",
+      titleEnd: "Beweging",
+      cards: [
+        { title: "Explosiviteit" },
+        { title: "Snelheid" },
+        { title: "Uithoudingsvermogen" }
+      ],
+      ui: {
+        playing: "Afspelen",
+        preview: "Preview",
+        vol: "VOL"
+      }
+    },
+    reviews: {
+      subtitle: "De Community",
+      title: "Goedgekeurd door Vechters",
+      items: [
+        { name: "Marc D.", role: "Amateur Bokser", text: "Het gevoel is ongelooflijk. Je voelt de weerstand echt aan het einde van de stoot. Mijn jabs zijn veel scherper." },
+        { name: "Sarah L.", role: "MMA Coach", text: "Ik gebruik het met al mijn leerlingen. Het is de beste tool om de dekking te corrigeren zonder te hoeven praten." },
+        { name: "Thomas B.", role: "Regionaal Kampioen", text: "Onverwoestbaar. Ik neem het overal mee naartoe. De warming-up is compleet veranderd." }
+      ]
+    },
+    faq: {
+      linkName: "FAQ",
+      title: "Veelgestelde Vragen",
+      items: [
+        { q: "Hoe lang gaat het elastiek mee?", a: "Onze elastieken zijn gemaakt van high-density polymeer, getest op meer dan 100.000 uitrekkingen." },
+        { q: "Is het geschikt voor beginners?", a: "Absoluut. De weerstand is progressief, dus het past zich aan je kracht en reikwijdte aan." },
+        { q: "Wat is de levertijd?", a: "Wij verzenden binnen 24 uur. Levering duurt meestal 2-3 werkdagen in Europa." }
+      ]
+    },
+    returnToMain: "Terug naar Home",
+    footer: {
+      rights: "Alle rechten voorbehouden.",
+      brandDesc: "De referentie-uitrusting voor vechtsporters die excellentie eisen.",
+      links: ["Juridisch", "Voorwaarden", "Contact"]
+    }
+  },
+  sv: {
+    nav: {
+      tech: "Teknologi",
+      training: "Träning",
+      buy: "KÖP NU",
+      reviews: "Recensioner",
+      faq: "FAQ",
+      account: "Mitt Konto"
+    },
+    hero: {
+      subtitle: "Progressivt Motståndssystem",
+      line1: "Slå",       // Frappez
+      line2: "Snabbare.", // Plus vite
+      line3: "Hårdare.",  // Plus fort
+      line4: "Längre.",   // Longtemps
+      description: "Förvandla luft till din motståndare. Shadow Strike lägger till flytande motstånd i varje rörelse för förödande explosivitet.",
+      cta: "Beställ",
+    },
+    features: {
+      title: "Den Orättvisa Fördelen",
+      subtitle: "Varför proffsen använder det",
+      cards: [
+        {
+          title: "Flytande Motstånd",
+          desc: "Till skillnad från fria vikter ökar bandet spänningen i slutet av rörelsen, exakt där kraften är som störst."
+        },
+        {
+          title: "Muskelminne",
+          desc: "Korrigera din hållning naturligt. Om din gard faller, påminner spänningen dig omedelbart."
+        },
+        {
+          title: "Lätt & Slitstark",
+          desc: "Polymer av flygplan-kvalitet. Oförstörbar, väger mindre än 200g och får plats i fickan."
+        }
+      ]
+    },
+    product3d: {
+      subtitle: "Ergonomisk Design",
+      titleStart: "Absolut",
+      titleEnd: "Grepp",
+      desc: "Texturerat grepp designat för att leda bort svett. Total kontroll, även vid maximal intensitet.",
+      btn: "Utforska 3D",
+      instructions: {
+        rotate: "Vänsterklick: Rotera",
+        zoom: "Scrolla: Zooma"
+      }
+    },
+    training: {
+      subtitle: "I Action",
+      titleStart: "Bemästra",
+      titleEnd: "Rörelsen",
+      cards: [
+        { title: "Explosivitet" },
+        { title: "Snabbhet" },
+        { title: "Uthållighet" }
+      ],
+      ui: {
+        playing: "Spelar",
+        preview: "Förhandsvisning",
+        vol: "VOL"
+      }
+    },
+    reviews: {
+      subtitle: "Communityn",
+      title: "Godkänd av Fighters",
+      items: [
+        { name: "Marc D.", role: "Amatörboxare", text: "Känslan är otrolig. Man känner verkligen motståndet i slutet av slaget. Mina jabbar är mycket snärtigare." },
+        { name: "Sarah L.", role: "MMA-coach", text: "Jag använder det med alla mina elever. Det är det bästa verktyget för att korrigera garden utan att behöva prata." },
+        { name: "Thomas B.", role: "Regionmästare", text: "Oförstörbar. Jag tar med den överallt. Uppvärmningen är på en helt annan nivå." }
+      ]
+    },
+    faq: {
+      linkName: "FAQ",
+      title: "Vanliga Frågor",
+      items: [
+        { q: "Hur lång livslängd har bandet?", a: "Våra band är gjorda av högdensitetspolymer testade för att klara över 100 000 sträckningar." },
+        { q: "Passar det nybörjare?", a: "Absolut. Motståndet är progressivt, så det anpassar sig efter din styrka och räckvidd." },
+        { q: "Vad är leveranstiden?", a: "Vi skickar inom 24h. Leverans tar vanligtvis 2-3 arbetsdagar i Europa." }
+      ]
+    },
+    returnToMain: "Tillbaka till Start",
+    footer: {
+      rights: "Alla rättigheter förbehållna.",
+      brandDesc: "Referensutrustningen för kampsportare som kräver excellens.",
+      links: ["Juridiskt", "Villkor", "Kontakt"]
     }
   }
 };
